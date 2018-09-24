@@ -13,6 +13,8 @@ console.log(americanMan.getName());
 americanMan = null;
 console.log(americanMan2.getName());
 
+
+
 //1 function and prototype and Object.prototype
 function Person(fName, lName) {
     this.fName = fName;
@@ -34,11 +36,9 @@ User.prototype.getAge = function () {
 };
 
 const user = new User('Vadim', 'Opolski', 35);
-
 console.log(user.getName() + ' ' + user.getAge());
 
 //2
-
 const animal = {animalType: 'animal', describe() {}};
 const mouse = Object.assign(Object.create(animal), {
         animalType: 'mouse',
@@ -58,3 +58,26 @@ obj = { name : "Vadim",
 
 console.log(obj.getName.call(obj));
 
+// 4
+let girl = {
+    name : 'Marina',
+    lastName : 'Opolski'
+};
+
+let student = {
+    profession : 'Math'
+};
+
+// student.__proto__ = girl;
+// console.log(student.name + student.lastName);
+
+// 5
+// Object.setPrototypeOf(student, girl);
+// console.log(student.name + ' ' +  student.lastName);
+
+// 6
+let student2 =  Object.create(girl);
+console.log(student2.name);
+
+// 7
+//class
